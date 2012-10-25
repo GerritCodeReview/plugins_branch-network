@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAKzn///8A\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "Does this need to be LocalDiskRepositoryManager? Normally we are injecting GitRepositoryManager.",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///74\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "For me canonicalWebUrl was set to \u0027http://localhost:8080\u0027. As result canonicalPath here had no trailing slash, resulting in invalid urls below when concatinating canonicalPath with other paths. Then of course the plugin was not working.\n\nSetting canonicalWebUrl to \u0027http://localhost:8080/\u0027 fixed the path issues.",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///78\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "I think this is not needed, because validateFor is already checking if that project is visible, and throwing NoSuchProjectException if not.",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7w\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/JsonService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "No need for this local variable, why not to return gson directly?",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///70\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/JsonService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "No need for this local variable, why not to return the new JsonWriter(...) directly?",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7s\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/GitCommitCacheRefresh.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "just inject GitRepositoryManager?",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7o\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "RevWalk needs to be released in finally block.",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7k\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "walk needs to be released",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7g\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "walk needs to be released",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7c\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "walk needs to be released",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7Y\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/json/Commit.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "nit: unneeded blank lines",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7Q\u003d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "I did this configuration:\n  project \u003d branch-network/?p\u003d${project}\n\nWhen clicking on the \u0027(GitBlit)\u0027 link for a project in the project list it is redirecting to \u0027http://127.0.0.1:8080/plugins/gitblit/branch-network/?p\u003dmyProject\u0027, but this results in NOT FOUND. The correct URL seems to be \u0027http://127.0.0.1:8080/plugins/branch-network/?p\u003dmyProject\u0027. Here the branch network is correctly shown.\n\nMy plugins in plugins folder are named:\n  gitblit.jar\n  branch-network.jar\n\nHave I configured something wrong??\n\nWhat is expected? Should \u0027/plugins/gitblit/branch-networ/?p\u003dmyProject\u0027 work or should the link open \u0027/plugins/branch-network/?p\u003dmyProject\u0027?",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7M\u003d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "s/Branch/The branch",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7I\u003d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "s/network/the network\n\ns/to allow the rendering/the rendering",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7U\u003d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "nit: some whitespace errors",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAKzn///7E\u003d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-25T17:22:24Z",
+      "side": 1,
+      "message": "s/of branch-network/of the branch-network",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

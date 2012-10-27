@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAALDX///8g\u003d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-27T13:31:27Z",
+      "side": 1,
+      "message": "Cool, with this configuration it works :-)\n\nBut changing the \u0027url\u0027 parameter means that for the other GitBlit parameter now \u0027gitblit/\u0027 needs to be added in the beginning.",
+      "revId": "8bb5ec1f5f640f6bd6b6c7f66de1f7a3120a0d19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAK+H///+8\u003d",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAK2n///+E\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAK2n///+A\u003d",
         "filename": "pom.xml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-10-25T21:00:12Z",
       "side": 1,
       "message": "Shouldn\u0027t these be \u003cscope\u003eprovided\u003c/scope\u003e?",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAK+H///+s\u003d",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Same should apply to the gerrit-httpd as well.",
+      "parentUuid": "AAAK2n///+A\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAK+H///+o\u003d",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Yep, I was thinking about the same ... just got \"lost\" in a copy\u0026paste exercise ;-(\n\nSimple JAR is fine, shade is not required.",
+      "parentUuid": "AAAK2n///98\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAKzn///8A\u003d",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2012-10-25T17:22:24Z",
       "side": 1,
       "message": "Does this need to be LocalDiskRepositoryManager? Normally we are injecting GitRepositoryManager.",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAK+H///+k\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Fair-enough ... today LocalDiskRepositoryManager is the only implementation but I like the idea of being able to use it with other repository managers in the future.\n\nDone.",
+      "parentUuid": "AAAKzn///8A\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAALDX////8\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "That format string was a bit confusing, refactoring now in a more correct and clear way.",
+      "parentUuid": "AAAKzn///74\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAKzn///78\u003d",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2012-10-25T17:22:24Z",
       "side": 1,
       "message": "I think this is not needed, because validateFor is already checking if that project is visible, and throwing NoSuchProjectException if not.",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALDX////4\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAKzn///78\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAALDX////0\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/JsonService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "True and moreover it can be stored in a static final.",
+      "parentUuid": "AAAKzn///7w\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAKzn///70\u003d",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/JsonService.java",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2012-10-25T17:22:24Z",
       "side": 1,
       "message": "No need for this local variable, why not to return the new JsonWriter(...) directly?",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALDX////w\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/JsonService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Actually the entire method is redundant ... inlining with the returnJsonResponse().",
+      "parentUuid": "AAAKzn///70\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAALDX////s\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/GitCommitCacheRefresh.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Actually not ... this refresh is needed ONLY when a LocalDiskRepositoryManager. This is because of its internal cache of project lists that is flushed when you list() is called (as side effect).\n\nWhenever a different repository manager is used, possibly this entire cache refresh class is not needed.",
+      "parentUuid": "AAAKzn///7s\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAK2n///9o\u003d",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/GitCommitCacheRefresh.java",
         "patchSetId": 1
@@ -166,6 +328,24 @@
       "writtenOn": "2012-10-25T21:00:12Z",
       "side": 1,
       "message": "I don\u0027t see why this method call is needed here.",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALDX////o\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/GitCommitCacheRefresh.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "See above: there is no other way to flush the internal list of projects ;-(\n\nThis call to list() is used for this purpose: will add a comment to explain.",
+      "parentUuid": "AAAK2n///9o\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAALDX////g\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/GitCommitCacheRefresh.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAK2n///9k\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAK2n///94\u003d",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
         "patchSetId": 1
@@ -200,6 +398,24 @@
       "writtenOn": "2012-10-25T21:00:12Z",
       "side": 1,
       "message": "Why aren\u0027t you using GitRepositoryManager to open the repository?",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALDX////E\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Legacy reasons as this was taken from our \"GitEnterprise\" that was running outside Gerrit.\n\nI am refactoring this part right now so we can take more advantage of being a Gerrit plug-in (and removing other useless methods in this class).",
+      "parentUuid": "AAAK2n///94\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAALDX////A\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done and repo closed as well in the finally block.",
+      "parentUuid": "AAAKzn///7o\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAKzn///7k\u003d",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
         "patchSetId": 1
@@ -234,6 +468,24 @@
       "writtenOn": "2012-10-25T17:22:24Z",
       "side": 1,
       "message": "walk needs to be released",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALDX///+8\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAKzn///7k\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAALDX///+4\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Legacy code reasons, removed now.",
+      "parentUuid": "AAAK2n///90\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAKzn///7g\u003d",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
         "patchSetId": 1
@@ -268,6 +538,24 @@
       "writtenOn": "2012-10-25T17:22:24Z",
       "side": 1,
       "message": "walk needs to be released",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALDX///+0\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAKzn///7g\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "AAALDX///+w\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/JGitFacade.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAKzn///7c\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAKzn///7Y\u003d",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/json/Commit.java",
         "patchSetId": 1
@@ -302,6 +608,24 @@
       "writtenOn": "2012-10-25T17:22:24Z",
       "side": 1,
       "message": "nit: unneeded blank lines",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALDX///+s\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/json/Commit.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAKzn///7Y\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -325,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "AAALDX///+o\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/json/Data.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAK2n///9w\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAK2n///9s\u003d",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/json/Parent.java",
         "patchSetId": 1
@@ -336,6 +678,24 @@
       "writtenOn": "2012-10-25T21:00:12Z",
       "side": 1,
       "message": "nit: trailing space, probably unnecessary line",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALDX///+Q\u003d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/data/json/Parent.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAK2n///9s\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -359,6 +719,24 @@
     },
     {
       "key": {
+        "uuid": "AAALDX///+k\u003d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "I forgot to include further stuff such as the \"type\" and \"url\" settings.\n\nPlug-in is expecting the \"p\u003dmyProject\" parameter over his plug-in root (/plugins/branch-network/).\n\nAmending now the description and in next commit will introduce an initStep in order to set this automatically.",
+      "parentUuid": "AAAKzn///7Q\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAKzn///7M\u003d",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 1
@@ -370,6 +748,24 @@
       "writtenOn": "2012-10-25T17:22:24Z",
       "side": 1,
       "message": "s/Branch/The branch",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALDX///+g\u003d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAKzn///7M\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -393,6 +789,24 @@
     },
     {
       "key": {
+        "uuid": "AAALDX///+c\u003d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAKzn///7I\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAKzn///7U\u003d",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 1
@@ -410,6 +824,24 @@
     },
     {
       "key": {
+        "uuid": "AAALDX///+Y\u003d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAKzn///7U\u003d",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAKzn///7E\u003d",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 1
@@ -421,6 +853,24 @@
       "writtenOn": "2012-10-25T17:22:24Z",
       "side": 1,
       "message": "s/of branch-network/of the branch-network",
+      "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALDX///+U\u003d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2012-10-27T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAKzn///7E\u003d",
       "revId": "3dc126611b4c503b95538f78bd18708cc3994efd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false

@@ -68,7 +68,7 @@ String.prototype.format = function() {
 
 /* Constructor for a network canvas, we need to give it
  * a canvas ID */
-NetworkCanvas = function(canvasid, width, height, names_width, meta, data, commitUrlTemplate, networkUrl, metaUrl, dataUrl) {
+NetworkCanvas = function(canvasid, width, height, names_width, meta, data, commitUrlTemplate, networkUrl, metaUrl, dataUrl, locationInsteadThanPopup) {
 	this.canvas = $('#'+canvasid).get(0);
 	this.height = height || 600;
 	this.width = width || 920;
@@ -78,6 +78,7 @@ NetworkCanvas = function(canvasid, width, height, names_width, meta, data, commi
 	this.networkUrl = networkUrl || "/";
 	this.metaUrl = metaUrl || "network_meta";
 	this.dataUrl = dataUrl || "network_data_chunk?nethash=";
+	this.locationInsteadThanPopup = locationInsteadThanPopup || false;
 
 	this.names_width = names_width || 100;
 	/* more stuff */
@@ -694,7 +695,7 @@ NetworkCanvas.Mouse = function(c) {
 		/* if we clicked on a dot, open commit in new window */
 		if (parnt.canvas.drawDot) {
 			var user = parnt.canvas.usersBySpace[parnt.canvas.drawDot.space - 1];
-			window.open(parnt.canvas.commitUrlTemplate.format(user.name, user.repo, parnt.canvas.drawDot.id));
+			parnt.goTo(parnt.canvas.commitUrlTemplate.format(user.name, user.repo, parnt.canvas.drawDot.id));
 		}
 		/* if we clicked on a name, go to network for this person */
 		if (parnt.lastPoint.x < parnt.canvas.names_width && parnt.lastPoint.y > 40) {
@@ -704,11 +705,18 @@ NetworkCanvas.Mouse = function(c) {
 				var yend = ystart + val.count * 20;
 				if ((ystart - parnt.canvas.yoffset <= parnt.lastPoint.y && yend - parnt.canvas.yoffset >= parnt.lastPoint.y)) {
 					var user = parnt.canvas.dataManager.meta.users[i];
-					window.open(parnt.canvas.networkUrl);
+					parnt.goTo(parnt.canvas.networkUrl);
 				}
 			}
 		}
 		parnt.dragging = true;
+	};
+	this.goTo = function(url) {
+		if (parnt.canvas.locationInsteadThanPopup) {
+			document.location = url;
+		} else {
+			window.open(url);
+		}
 	};
 	/* When the mouse button is released, we stop the dragging */
 	this.up = function(e) {

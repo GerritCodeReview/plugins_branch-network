@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ebaf89c_0a8e1b83",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-16T08:34:37Z",
+      "side": 1,
+      "message": "How would I run the BUCK build for this plugin to verify this?\nWhich target do I need to specify for \u0027buck build\u0027?",
+      "revId": "2416fba05a8b9b18e260ad4528c5559d1c1c2b36",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

@@ -46,11 +46,8 @@ public class GitCommitCacheRefresh implements GitReferenceUpdatedListener,
 
   @Override
   public void onGitReferenceUpdated(GitReferenceUpdatedListener.Event event) {
-    for (Update update : event.getUpdates()) {
-      if (update.getRefName().startsWith("refs/heads")) {
-        networkGraphDataCache.refresh(event.getProjectName());
-        return;
-      }
+    if (event.getRefName().startsWith("refs/heads/")) {
+      networkGraphDataCache.refresh(event.getProjectName());
     }
   }
 }

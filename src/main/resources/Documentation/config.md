@@ -10,14 +10,20 @@ GitWeb configuration
 --------------------
 
 In order to use branch-network plugin as GitWeb project viewer replacement
-simply add the following line to your existing Gerrit config under the
-GitWeb section (assuming plugin was copied as branch-network.jar):
+simply add the following lines to your existing Gerrit config under the
+GitWeb section (assuming the plugin was copied as branch-network.jar):
 
 ```
   type = custom
   url = plugins/
   project = branch-network/?p=${project}
+  branch = branch-network/
+  revision = branch-network/
+  filehistory = branch-network/
 ```
+
+Note that the `branch`, `revision` and `filehistory` settings are unused
+by this plugin, but must be present in the configuration.
 
 Usage in other GWT or JavaScript UI
 -----------------------------------

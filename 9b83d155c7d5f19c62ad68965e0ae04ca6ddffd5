@@ -22,6 +22,24 @@
       "revId": "9b83d155c7d5f19c62ad68965e0ae04ca6ddffd5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dec4282a_6e56cfdc",
+        "filename": "pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-16T09:18:40Z",
+      "side": 1,
+      "message": "I don\u0027t have a working maven environment to build this in.\n\nCan you upload a separate change to update the api version and fix this?\n\nThen I\u0027ll rebase this change on top of it.",
+      "parentUuid": "7ecb3c3d_2bbe79f4",
+      "revId": "9b83d155c7d5f19c62ad68965e0ae04ca6ddffd5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

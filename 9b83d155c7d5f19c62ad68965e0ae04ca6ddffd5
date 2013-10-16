@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ecb3c3d_2bbe79f4",
+        "filename": "pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-16T09:14:29Z",
+      "side": 1,
+      "message": "I believe with 2.8 we do not publish the \u0027gerrit-server\u0027 and \u0027gerrit-httpd\u0027 artifact into a Maven repository anymore and hence this dependencies cannot be resolved anymore.\n\nI think they should now be replaced by\n\n  \u003cdependency\u003e\n    \u003cgroupId\u003ecom.google.gerrit\u003c/groupId\u003e\n    \u003cartifactId\u003egerrit-${Gerrit-ApiType}-api\u003c/artifactId\u003e\n    \u003cversion\u003e${Gerrit-ApiVersion}\u003c/version\u003e\n    \u003cscope\u003eprovided\u003c/scope\u003e\n  \u003c/dependency\u003e",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 17
+      },
+      "revId": "9b83d155c7d5f19c62ad68965e0ae04ca6ddffd5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

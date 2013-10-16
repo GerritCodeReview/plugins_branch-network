@@ -40,6 +40,24 @@
       "revId": "9b83d155c7d5f19c62ad68965e0ae04ca6ddffd5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bec1341b_8dd3014d",
+        "filename": "pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-16T09:28:51Z",
+      "side": 1,
+      "message": "I uploaded it myself in [1]\n\n[1] https://gerrit-review.googlesource.com/#/c/50888/",
+      "parentUuid": "dec4282a_6e56cfdc",
+      "revId": "9b83d155c7d5f19c62ad68965e0ae04ca6ddffd5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

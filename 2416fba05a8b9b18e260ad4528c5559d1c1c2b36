@@ -34,6 +34,24 @@
       "revId": "2416fba05a8b9b18e260ad4528c5559d1c1c2b36",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bec1341b_6ddb356a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-16T08:43:01Z",
+      "side": 1,
+      "message": "Just to confirm, were you asking me how to do it, or were you suggesting that it should be in the commit message?",
+      "parentUuid": "bec1341b_8d7a2173",
+      "revId": "2416fba05a8b9b18e260ad4528c5559d1c1c2b36",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

@@ -27,6 +27,7 @@ import org.eclipse.jgit.lib.Config;
 import org.eclipse.jgit.lib.Repository;
 
 import com.google.common.base.Objects;
+import com.google.gerrit.common.data.GitWebType;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.httpd.GitWebConfig;
 import com.google.gerrit.reviewdb.client.Project;
@@ -115,66 +116,72 @@ public class GitGraphServlet extends HttpServlet {
       String networkDataChunkUrl =
           String.format("%1$snetwork_data_chunk/%2$s/?nethash=", canonicalPath,
               repoName);
-      String commitUrlPattern =
-          gitWebConfig.getUrl()
-              + gitWebConfig.getGitWebType().getRevision()
-                  .replaceAll("\\$\\{project\\}", repoName)
-                  .replaceAll("\\$\\{commit\\}", "{2}");
-      String projectPattern =
-          gitWebConfig.getUrl()
-              + gitWebConfig.getGitWebType().getProject()
-                  .replaceAll("\\$\\{project\\}", repoName);
 
-      commitUrlPattern =
-          (commitUrlPattern.startsWith("/") ? commitUrlPattern : canonicalWebUrl
-              + commitUrlPattern);
-      projectPattern =
-          (projectPattern.startsWith("/") ? projectPattern : canonicalWebUrl
-              + projectPattern);
+      GitWebType type = gitWebConfig.getGitWebType();
+      if (type == null) {
+        out.println("<html>ERROR: invalid gitweb configuration</html>");
+      } else {
+        String commitUrlPattern =
+            gitWebConfig.getUrl()
+                + type.getRevision()
+                    .replaceAll("\\$\\{project\\}", repoName)
+                    .replaceAll("\\$\\{commit\\}", "{2}");
+        String projectPattern =
+            gitWebConfig.getUrl()
+                + type.getProject()
+                    .replaceAll("\\$\\{project\\}", repoName);
 
-      String header =
-          "<html>\n" + "<head>\n" + "<style type=\"text/css\">\n"
-              + "div#progress\n" + "{\n" + "position:absolute;\n" + "left:"
-              + (width - PROGRESS_BAR_WIDTH) / 2
-              + "px;\n"
-              + "top:"
-              + (height - PROGRESS_BAR_HEIGHT) / 2
-              + "px;\n"
-              + "z-index:-1;\n"
-              + "}\n"
-              + "div#graph\n"
-              + "{\n"
-              + "position:absolute;\n"
-              + "left:0px;\n"
-              + "top:0px;\n"
-              + "z-index:0;\n"
-              + "}\n"
-              + "</style>\n"
-              + "</head>\n"
-              + "<body>\n"
-              + "<div id=\"progress\" >"
-              + "<img src=\""
-              + canonicalPath
-              + "static/progress_bar.gif\" />"
-              + "</div>"
-              + "<div id=\"graph\">";
-      String javaScript =
-          "<script type=\"text/javascript\" src=\"" + canonicalPath
-              + "static/jquery-1.4.2.min.js\"></script>\n"
-              + "<script type=\"text/javascript\" src=\"" + canonicalPath
-              + "static/network.js\"></script>\n"
-              + "<script type=\"text/javascript\">"
-              + "$(document).ready( function() {\n"
-              + "new NetworkCanvas('network-canvas', " + width + ", " + height
-              + " , null, null, null,\n" + "'" + commitUrlPattern + "',\n"
-              + "'" + projectPattern + "',\n" + "'" + networkMetaUrl + "',\n"
-              + "'" + networkDataChunkUrl + "');\n" + "});\n" + "</script>\n";
-      String canvas =
-          "<canvas id=\"network-canvas\" width=\"" + width + "\" height=\""
-              + height + "\" style=\"cursor: default; \"></canvas>";
-      String footer = "</div>" + "</body>\n" + "</html>\n";
-      out.println(naked ? (javaScript + canvas)
-          : (header + javaScript + canvas + footer));
+        commitUrlPattern =
+            (commitUrlPattern.startsWith("/") ? commitUrlPattern : canonicalWebUrl
+                + commitUrlPattern);
+        projectPattern =
+            (projectPattern.startsWith("/") ? projectPattern : canonicalWebUrl
+                + projectPattern);
+
+        String header =
+            "<html>\n" + "<head>\n" + "<style type=\"text/css\">\n"
+                + "div#progress\n" + "{\n" + "position:absolute;\n" + "left:"
+                + (width - PROGRESS_BAR_WIDTH) / 2
+                + "px;\n"
+                + "top:"
+                + (height - PROGRESS_BAR_HEIGHT) / 2
+                + "px;\n"
+                + "z-index:-1;\n"
+                + "}\n"
+                + "div#graph\n"
+                + "{\n"
+                + "position:absolute;\n"
+                + "left:0px;\n"
+                + "top:0px;\n"
+                + "z-index:0;\n"
+                + "}\n"
+                + "</style>\n"
+                + "</head>\n"
+                + "<body>\n"
+                + "<div id=\"progress\" >"
+                + "<img src=\""
+                + canonicalPath
+                + "static/progress_bar.gif\" />"
+                + "</div>"
+                + "<div id=\"graph\">";
+        String javaScript =
+            "<script type=\"text/javascript\" src=\"" + canonicalPath
+                + "static/jquery-1.4.2.min.js\"></script>\n"
+                + "<script type=\"text/javascript\" src=\"" + canonicalPath
+                + "static/network.js\"></script>\n"
+                + "<script type=\"text/javascript\">"
+                + "$(document).ready( function() {\n"
+                + "new NetworkCanvas('network-canvas', " + width + ", " + height
+                + " , null, null, null,\n" + "'" + commitUrlPattern + "',\n"
+                + "'" + projectPattern + "',\n" + "'" + networkMetaUrl + "',\n"
+                + "'" + networkDataChunkUrl + "');\n" + "});\n" + "</script>\n";
+        String canvas =
+            "<canvas id=\"network-canvas\" width=\"" + width + "\" height=\""
+                + height + "\" style=\"cursor: default; \"></canvas>";
+        String footer = "</div>" + "</body>\n" + "</html>\n";
+        out.println(naked ? (javaScript + canvas)
+            : (header + javaScript + canvas + footer));
+      }
     } finally {
       out.close();
     }

@@ -13,9 +13,6 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.branchnetwork.data.json;
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,22 +26,6 @@ public class Commit  {
     private int space;
     private String email;
     private String message;
-    private String gravatar;
-
-    public String generateGravatar(String email) {
-          if (email == null) {
-              return null;
-          }
-
-          try {
-              MessageDigest m = MessageDigest.getInstance("MD5");
-              m.update(email.toLowerCase().getBytes());
-              BigInteger i = new BigInteger(1, m.digest());
-              return String.format("%1$032x", i);
-          } catch (NoSuchAlgorithmException e) {
-            return null;
-          }
-    }
 
     public String getAuthor() {
         return author;
@@ -109,7 +90,6 @@ public class Commit  {
 
     public void setEmail(String email) {
         this.email = email;
-        this.gravatar = generateGravatar(email);
     }
 
     public void setMessage(String message) {

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7e109c95_e3ac32cc",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-18T13:50:34Z",
+      "side": 1,
+      "message": "As explained in about.md if you have GitWeb configured for your Gerrit site, you may redirect the project link to this plugin. Another purpose of this plugin is to be embedded into other plugins.\n\nWhat would be the meaning of multiple GitWeb sections? How would Gerrit decide from which of these sections it should display the link? Should it then display multiple GitWeb links? Ask the user which one he wants when he clicks on it?\n\nIt\u0027s surely doable to support multiple GitWeb sections, but I\u0027m not sure if it\u0027s worth to spend effort on implementing this.\n\nIn my opinion it would make more sense to allow GitWeb sections that do not set all parameters. Gerrit could simply not display those GitWeb links that are not configured.",
+      "parentUuid": "7e109c95_43bee6f4",
+      "revId": "55cbd8689b8fedc89c1ab95db033cc9840b45e64",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ed0e40e_41c43284",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-18T13:00:47Z",
       "side": 1,
       "message": "I guess we want here stable plugin name and should introduce\n\n Gerrit-PluginName: branch-network\n\nin MANIFEST file of branch-network plugin?",
+      "revId": "55cbd8689b8fedc89c1ab95db033cc9840b45e64",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ed0e40e_e1ac66cc",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-18T13:50:34Z",
+      "side": 1,
+      "message": "Makes sense to me. When this was developed the plugin name could not be specified and afterwards nobody took the task to change this.",
+      "parentUuid": "3ed0e40e_41c43284",
       "revId": "55cbd8689b8fedc89c1ab95db033cc9840b45e64",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false

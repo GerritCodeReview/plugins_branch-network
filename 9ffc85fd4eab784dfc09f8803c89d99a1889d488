@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3e2b84c4_e9ac15cc",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-18T09:13:32Z",
+      "side": 1,
+      "message": "It would be nice if the plugin did not need to do this.\n\nIs it possible to get this injected?",
+      "revId": "9ffc85fd4eab784dfc09f8803c89d99a1889d488",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

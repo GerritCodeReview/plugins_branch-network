@@ -16,6 +16,7 @@ package com.googlesource.gerrit.plugins.branchnetwork.canvas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -63,7 +64,7 @@ public class GitGraphServlet extends HttpServlet {
       canonicalWebUrl += "/";
     }
     this.canonicalPath =
-        String.format("%splugins/%s/", canonicalWebUrl, pluginName);
+        String.format("%splugins/%s/", (new URL(canonicalWebUrl)).getPath(), pluginName);
     this.projectControl = projectControl;
     this.repoManager = repoManager;
     this.gitWebConfig = gitWebConfig;

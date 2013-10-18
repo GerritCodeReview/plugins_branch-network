@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "1e07a053_f0d3604b",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-18T09:08:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e109c95_83229eae",
+      "revId": "83656a058c739275e0d841f8c0ef324e219dd54b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ed0e40e_215bae33",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 3
@@ -60,6 +78,24 @@
       "side": 1,
       "message": "I was just looking into this again and have uploaded a related change on gerrit\u0027s documentation.\n\nhttps://gerrit-review.googlesource.com/#/c/51045/",
       "parentUuid": "3ed0e40e_215bae33",
+      "revId": "83656a058c739275e0d841f8c0ef324e219dd54b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e2b84c4_a9b21d25",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-18T09:08:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e2b84c4_69b9450b",
       "revId": "83656a058c739275e0d841f8c0ef324e219dd54b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false

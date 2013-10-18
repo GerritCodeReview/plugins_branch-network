@@ -48,7 +48,6 @@ Example
 -------
 
 The following URL allows to get a 1024x768 HTML5 Canvas in a naked HTML fragment.
-(assuming plugin was copied as branch-network.jar)
 
 ```
   branch-network/?p=${project}&naked=y&width=1024&height=768

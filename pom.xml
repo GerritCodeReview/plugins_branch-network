@@ -63,6 +63,7 @@ limitations under the License.
         <configuration>
           <archive>
             <manifestEntries>
+              <Gerrit-PluginName>branch-network</Gerrit-PluginName>
               <Gerrit-Module>${Gerrit-Module}</Gerrit-Module>
               <Gerrit-HttpModule>${Gerrit-HttpModule}</Gerrit-HttpModule>
               <Implementation-Vendor>GerritForge LLP</Implementation-Vendor>

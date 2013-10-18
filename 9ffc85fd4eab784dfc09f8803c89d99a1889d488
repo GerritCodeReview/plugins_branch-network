@@ -34,6 +34,24 @@
       "revId": "9ffc85fd4eab784dfc09f8803c89d99a1889d488",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e2b84c4_c9a951ba",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-18T09:21:43Z",
+      "side": 1,
+      "message": "We can already inject the plugin\u0027s own name, and if it\u0027s possible to inject canonical web url, we should be able to implement injection of a combination of those.  Right?",
+      "parentUuid": "7e109c95_834bbe5e",
+      "revId": "9ffc85fd4eab784dfc09f8803c89d99a1889d488",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

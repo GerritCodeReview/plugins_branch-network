@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7e109c95_43bee6f4",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2013-10-18T13:00:47Z",
+      "side": 1,
+      "message": "I don\u0027t understand, how a Gerrit site suppose to use it, if they need both: GitWeb + branch-network plugin. May be we should extend this concept and have multiple GitWeb section links?",
+      "revId": "55cbd8689b8fedc89c1ab95db033cc9840b45e64",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ed0e40e_41c43284",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2013-10-18T13:00:47Z",
+      "side": 1,
+      "message": "I guess we want here stable plugin name and should introduce\n\n Gerrit-PluginName: branch-network\n\nin MANIFEST file of branch-network plugin?",
+      "revId": "55cbd8689b8fedc89c1ab95db033cc9840b45e64",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

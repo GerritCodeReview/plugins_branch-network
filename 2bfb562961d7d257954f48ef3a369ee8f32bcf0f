@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bec4d461_b522a0ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-21T02:33:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bec4d461_7541e848",
+      "revId": "2bfb562961d7d257954f48ef3a369ee8f32bcf0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dec7c862_9625acbb",
         "filename": "src/main/resources/static/network.js",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-21T02:30:43Z",
       "side": 1,
       "message": "s/locationInsteadThanPopup/locationInsteadOfPopup",
+      "revId": "2bfb562961d7d257954f48ef3a369ee8f32bcf0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bec4d461_d52f1c95",
+        "filename": "src/main/resources/static/network.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-21T02:33:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dec7c862_9625acbb",
       "revId": "2bfb562961d7d257954f48ef3a369ee8f32bcf0f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false

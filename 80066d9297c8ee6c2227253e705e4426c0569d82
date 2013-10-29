@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "7e6edcb1_13268cc5",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-29T09:51:48Z",
+      "side": 1,
+      "message": "Rather than messing with the code here, I\u0027ve changed the initialisation of `canonicalWebUrl` to make sure it\u0027s the same format as before.",
+      "parentUuid": "be8bf4a1_5d7bbb78",
+      "revId": "80066d9297c8ee6c2227253e705e4426c0569d82",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be8bf4a1_7d78777b",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
         "patchSetId": 1
@@ -42,6 +60,24 @@
         "endLine": 134,
         "endChar": 32
       },
+      "revId": "80066d9297c8ee6c2227253e705e4426c0569d82",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e6edcb1_332388b6",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-29T09:51:48Z",
+      "side": 1,
+      "message": "As above",
+      "parentUuid": "be8bf4a1_7d78777b",
       "revId": "80066d9297c8ee6c2227253e705e4426c0569d82",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false

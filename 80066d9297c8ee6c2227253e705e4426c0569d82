@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be8bf4a1_5d7bbb78",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-29T09:36:13Z",
+      "side": 1,
+      "message": "This is now incorrect.\n\nBefore this change canonicalWebUrl was the URL of the server, but now it is the URL of the plugin. commitUrlPattern already contains \u0027/plugins/branch-network/\u0027, at least with the configuration that is suggested in config.md.",
+      "range": {
+        "startLine": 130,
+        "startChar": 67,
+        "endLine": 131,
+        "endChar": 34
+      },
+      "revId": "80066d9297c8ee6c2227253e705e4426c0569d82",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be8bf4a1_7d78777b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-29T09:36:13Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 133,
+        "startChar": 63,
+        "endLine": 134,
+        "endChar": 32
+      },
+      "revId": "80066d9297c8ee6c2227253e705e4426c0569d82",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

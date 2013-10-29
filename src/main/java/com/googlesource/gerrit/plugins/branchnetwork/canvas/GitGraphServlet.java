@@ -24,15 +24,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.jgit.errors.RepositoryNotFoundException;
-import org.eclipse.jgit.lib.Config;
 import org.eclipse.jgit.lib.Repository;
 
-import com.google.common.base.Objects;
 import com.google.gerrit.common.data.GitWebType;
+import com.google.gerrit.extensions.annotations.PluginCanonicalWebUrl;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.httpd.GitWebConfig;
 import com.google.gerrit.reviewdb.client.Project;
-import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.gerrit.server.project.NoSuchProjectException;
 import com.google.gerrit.server.project.ProjectControl;
@@ -50,21 +48,18 @@ public class GitGraphServlet extends HttpServlet {
   private Factory projectControl;
   private GitRepositoryManager repoManager;
   private GitWebConfig gitWebConfig;
-  private String canonicalWebUrl;
+  private String pluginCanonicalWebUrl;
 
   @Inject
   public GitGraphServlet(@PluginName String pluginName,
-      @GerritServerConfig final Config gerritConfig, GitWebConfig gitWebConfig,
+      @PluginCanonicalWebUrl String url,
+      GitWebConfig gitWebConfig,
       final ProjectControl.Factory projectControl,
       final GitRepositoryManager repoManager)
       throws MalformedURLException {
-    this.canonicalWebUrl =
-        Objects.firstNonNull(gerritConfig.getString("gerrit", null, "canonicalWebUrl"), "/");
-    if(!canonicalWebUrl.endsWith("/")) {
-      canonicalWebUrl += "/";
-    }
-    this.canonicalPath =
-        String.format("%splugins/%s/", (new URL(canonicalWebUrl)).getPath(), pluginName);
+    this.canonicalPath = new URL(url).getPath();
+    this.pluginCanonicalWebUrl =
+        url.substring(0, url.length() - (canonicalPath.length() - 1));
     this.projectControl = projectControl;
     this.repoManager = repoManager;
     this.gitWebConfig = gitWebConfig;
@@ -133,10 +128,10 @@ public class GitGraphServlet extends HttpServlet {
                     .replaceAll("\\$\\{project\\}", repoName);
 
         commitUrlPattern =
-            (commitUrlPattern.startsWith("/") ? commitUrlPattern : canonicalWebUrl
+            (commitUrlPattern.startsWith("/") ? commitUrlPattern : pluginCanonicalWebUrl
                 + commitUrlPattern);
         projectPattern =
-            (projectPattern.startsWith("/") ? projectPattern : canonicalWebUrl
+            (projectPattern.startsWith("/") ? projectPattern : pluginCanonicalWebUrl
                 + projectPattern);
 
         String header =

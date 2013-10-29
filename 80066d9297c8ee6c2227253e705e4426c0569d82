@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "de77c87c_b6da2864",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2013-10-29T09:54:32Z",
+      "side": 1,
+      "message": "Please rename that var to pluginCanonicalWebUrl.",
+      "revId": "80066d9297c8ee6c2227253e705e4426c0569d82",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be8bf4a1_5d7bbb78",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
         "patchSetId": 1

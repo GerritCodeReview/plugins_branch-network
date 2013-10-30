@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be8bf4a1_dd4a6b2e",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2013-10-30T06:44:16Z",
+      "side": 1,
+      "message": "pluginName is not used anymore.",
+      "revId": "0235e9e61c4397f66c38778dcf731101aa5bb5b3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

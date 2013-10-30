@@ -16,6 +16,24 @@
       "revId": "0235e9e61c4397f66c38778dcf731101aa5bb5b3",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be74d47b_f559f837",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/branchnetwork/canvas/GitGraphServlet.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-10-30T07:48:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be8bf4a1_dd4a6b2e",
+      "revId": "0235e9e61c4397f66c38778dcf731101aa5bb5b3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

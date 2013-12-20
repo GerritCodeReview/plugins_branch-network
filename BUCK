@@ -9,6 +9,7 @@ gerrit_plugin(
   ],
   deps = [
     '//lib/commons:io',
+    '//lib:gson',
   ],
 )
 

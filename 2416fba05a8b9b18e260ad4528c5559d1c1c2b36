@@ -70,6 +70,23 @@
       "revId": "2416fba05a8b9b18e260ad4528c5559d1c1c2b36",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "283d0b9f_ee3d9fdc",
+        "filename": "BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1010015
+      },
+      "writtenOn": "2013-12-20T09:37:50Z",
+      "side": 1,
+      "message": "now need add one line here as below else buck build will run into error,\nseems I can not push a patch here, so will you please add it.\n\n$ git diff HEAD~ HEAD\ndiff --git a/BUCK b/BUCK\nindex f5407b7..4eb7273 100644\n--- a/BUCK\n+++ b/BUCK\n@@ -9,6 +9,7 @@ gerrit_plugin(\n   ],\n   deps \u003d [\n     \u0027//lib/commons:io\u0027,\n+    \u0027//lib:gson\u0027,\n   ],\n )",
+      "revId": "2416fba05a8b9b18e260ad4528c5559d1c1c2b36",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

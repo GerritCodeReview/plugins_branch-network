@@ -28,8 +28,8 @@ import org.eclipse.jgit.lib.Repository;
 
 import com.google.gerrit.common.data.GitWebType;
 import com.google.gerrit.extensions.annotations.PluginCanonicalWebUrl;
-import com.google.gerrit.httpd.GitWebConfig;
 import com.google.gerrit.reviewdb.client.Project;
+import com.google.gerrit.server.config.GitWebConfig;
 import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.gerrit.server.project.NoSuchProjectException;
 import com.google.gerrit.server.project.ProjectControl;

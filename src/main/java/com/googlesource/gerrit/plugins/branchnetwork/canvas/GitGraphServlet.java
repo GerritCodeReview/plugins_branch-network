@@ -26,10 +26,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jgit.errors.RepositoryNotFoundException;
 import org.eclipse.jgit.lib.Repository;
 
-import com.google.gerrit.common.data.GitWebType;
+import com.google.gerrit.common.data.GitwebType;
 import com.google.gerrit.extensions.annotations.PluginCanonicalWebUrl;
-import com.google.gerrit.httpd.GitWebConfig;
 import com.google.gerrit.reviewdb.client.Project;
+import com.google.gerrit.server.config.GitwebConfig;
 import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.gerrit.server.project.NoSuchProjectException;
 import com.google.gerrit.server.project.ProjectControl;
@@ -46,12 +46,12 @@ public class GitGraphServlet extends HttpServlet {
   private String canonicalPath;
   private Factory projectControl;
   private GitRepositoryManager repoManager;
-  private GitWebConfig gitWebConfig;
+  private GitwebConfig gitWebConfig;
   private String pluginCanonicalWebUrl;
 
   @Inject
   public GitGraphServlet(@PluginCanonicalWebUrl String url,
-      GitWebConfig gitWebConfig,
+      GitwebConfig gitWebConfig,
       final ProjectControl.Factory projectControl,
       final GitRepositoryManager repoManager)
       throws MalformedURLException {
@@ -111,7 +111,7 @@ public class GitGraphServlet extends HttpServlet {
           String.format("%1$snetwork_data_chunk/%2$s/?nethash=", canonicalPath,
               repoName);
 
-      GitWebType type = gitWebConfig.getGitWebType();
+      GitwebType type = gitWebConfig.getGitwebType();
       if (type == null) {
         out.println("<html>ERROR: invalid gitweb configuration</html>");
       } else {

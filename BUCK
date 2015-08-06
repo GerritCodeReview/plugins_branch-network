@@ -8,7 +8,6 @@ gerrit_plugin(
     'Gerrit-HttpModule: com.googlesource.gerrit.plugins.branchnetwork.NetworkGraphModule'
   ],
   deps = [
-    '//lib/commons:io',
     '//lib:gson',
   ],
 )

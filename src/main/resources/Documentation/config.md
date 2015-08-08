@@ -15,6 +15,8 @@ GitWeb section (assuming the plugin was copied as branch-network.jar):
   branch = ?p=${project}
   revision = ?p=${project}
   filehistory = ?p=${project}
+  roottree = ?p=${project}
+  file = ?p=${project}
 ```
 
 Note that the `project, ``branch`, `revision` and `filehistory` settings

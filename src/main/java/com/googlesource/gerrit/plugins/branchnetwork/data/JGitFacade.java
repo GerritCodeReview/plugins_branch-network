@@ -166,11 +166,8 @@ public class JGitFacade {
   }
 
   public int getBranchesPlotLanesCount(String repoName) throws IOException {
-    final Repository repo =
-        repoManager.openRepository(NameKey.parse(repoName));
-    final PlotWalk walk = new PlotWalk(repo);
-
-    try {
+    try (Repository repo = repoManager.openRepository(NameKey.parse(repoName));
+         PlotWalk walk = new PlotWalk(repo);) {
       ObjectId headId = repo.resolve(Constants.HEAD);
       if (headId == null) return 0;
 
@@ -188,9 +185,6 @@ public class JGitFacade {
       }
 
       return maxLane;
-    } finally {
-      walk.dispose();
-      repo.close();
     }
   }
 }

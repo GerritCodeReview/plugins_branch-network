@@ -7,7 +7,7 @@ gerrit_plugin(
     'Gerrit-Module: com.googlesource.gerrit.plugins.branchnetwork.GitCommitCacheModule',
     'Gerrit-HttpModule: com.googlesource.gerrit.plugins.branchnetwork.NetworkGraphModule'
   ],
-  deps = [
+  provided_deps = [
     '//lib:gson',
   ],
 )

@@ -18,7 +18,6 @@ import java.util.List;
 import com.google.common.cache.LoadingCache;
 import com.google.gerrit.extensions.events.GitReferenceUpdatedListener;
 import com.google.gerrit.extensions.events.NewProjectCreatedListener;
-import com.google.gerrit.server.git.LocalDiskRepositoryManager;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import com.googlesource.gerrit.plugins.branchnetwork.data.json.Commit;
@@ -26,12 +25,10 @@ import com.googlesource.gerrit.plugins.branchnetwork.data.json.Commit;
 public class GitCommitCacheRefresh implements GitReferenceUpdatedListener,
     NewProjectCreatedListener {
   private LoadingCache<String, List<Commit>> networkGraphDataCache;
-  private final LocalDiskRepositoryManager repoManager;
 
   @Inject
   public GitCommitCacheRefresh(
-      @Named(GitCommitCache.GRAPH_DATA_CACHE) final LoadingCache<String, List<Commit>> networkGraphDataCache,
-      final LocalDiskRepositoryManager repoManager) {
+      @Named(GitCommitCache.GRAPH_DATA_CACHE) final LoadingCache<String, List<Commit>> networkGraphDataCache) {
     this.networkGraphDataCache = networkGraphDataCache;
     this.repoManager = repoManager;
   }
@@ -40,8 +37,6 @@ public class GitCommitCacheRefresh implements GitReferenceUpdatedListener,
   public void onNewProjectCreated(
       com.google.gerrit.extensions.events.NewProjectCreatedListener.Event event) {
     networkGraphDataCache.refresh(event.getProjectName());
-    repoManager.list(); // Invoked for flushing the LocalDiskRepositoryManager project list cache
-
   }
 
   @Override

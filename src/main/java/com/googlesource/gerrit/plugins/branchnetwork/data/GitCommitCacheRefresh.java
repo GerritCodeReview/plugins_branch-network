@@ -31,7 +31,6 @@ public class GitCommitCacheRefresh implements GitReferenceUpdatedListener,
       @Named(GitCommitCache.GRAPH_DATA_CACHE) final LoadingCache<String,
       List<Commit>> networkGraphDataCache) {
     this.networkGraphDataCache = networkGraphDataCache;
-    this.repoManager = repoManager;
   }
 
   @Override

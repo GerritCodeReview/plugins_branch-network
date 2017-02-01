@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4c9bfa1_45df0151",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Feb 1, 2017 12:32:46 PM",
+      "side": 1,
+      "message": "Wrong, see Buck build:\n\n  resources \u003d glob([\u0027src/main/resources/**/*\u0027]),",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 40
+      },
+      "revId": "74cf103933688f30270e9d46f5fc15e2f52c9cff",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

@@ -28,13 +28,16 @@ import org.eclipse.jgit.lib.Repository;
 
 import com.google.gerrit.common.data.GitwebType;
 import com.google.gerrit.extensions.annotations.PluginCanonicalWebUrl;
+import com.google.gerrit.extensions.restapi.AuthException;
 import com.google.gerrit.reviewdb.client.Project;
+import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.GitwebConfig;
 import com.google.gerrit.server.git.GitRepositoryManager;
-import com.google.gerrit.server.project.NoSuchProjectException;
-import com.google.gerrit.server.project.ProjectControl;
-import com.google.gerrit.server.project.ProjectControl.Factory;
+import com.google.gerrit.server.permissions.PermissionBackend;
+import com.google.gerrit.server.permissions.PermissionBackendException;
+import com.google.gerrit.server.permissions.ProjectPermission;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
 @Singleton
@@ -44,23 +47,26 @@ public class GitGraphServlet extends HttpServlet {
   private static final int PROGRESS_BAR_WIDTH = 208;
   private static final int PROGRESS_BAR_HEIGHT = 13;
   private String canonicalPath;
-  private Factory projectControl;
   private GitRepositoryManager repoManager;
   private GitwebConfig gitWebConfig;
   private String pluginCanonicalWebUrl;
+  private final Provider<CurrentUser> user;
+  private final PermissionBackend permissionBackend;
 
   @Inject
   public GitGraphServlet(@PluginCanonicalWebUrl String url,
       GitwebConfig gitWebConfig,
-      final ProjectControl.Factory projectControl,
-      final GitRepositoryManager repoManager)
+      final GitRepositoryManager repoManager,
+      Provider<CurrentUser> user,
+      PermissionBackend permissionBackend)
       throws MalformedURLException {
     this.canonicalPath = new URL(url).getPath();
     this.pluginCanonicalWebUrl =
         url.substring(0, url.length() - (canonicalPath.length() - 1));
-    this.projectControl = projectControl;
     this.repoManager = repoManager;
     this.gitWebConfig = gitWebConfig;
+    this.user = user;
+    this.permissionBackend = permissionBackend;
   }
 
   @Override
@@ -86,8 +92,8 @@ public class GitGraphServlet extends HttpServlet {
 
       final Project.NameKey nameKey = new Project.NameKey(repoName);
       try {
-        projectControl.validateFor(nameKey);
-      } catch (NoSuchProjectException e) {
+        permissionBackend.user(user).project(nameKey).check(ProjectPermission.ACCESS);
+      } catch (AuthException | PermissionBackendException e) {
         resp.sendError(HttpServletResponse.SC_NOT_FOUND);
         return;
       }

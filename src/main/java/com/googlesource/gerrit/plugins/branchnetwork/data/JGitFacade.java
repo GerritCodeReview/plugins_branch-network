@@ -13,6 +13,13 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.branchnetwork.data;
 
+import com.google.gerrit.reviewdb.client.Project.NameKey;
+import com.google.gerrit.server.git.GitRepositoryManager;
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
+import com.googlesource.gerrit.plugins.branchnetwork.data.json.Commit;
+import com.googlesource.gerrit.plugins.branchnetwork.data.json.Head;
+import com.googlesource.gerrit.plugins.branchnetwork.data.json.Parent;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
@@ -20,7 +27,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
 import org.eclipse.jgit.lib.Constants;
 import org.eclipse.jgit.lib.ObjectId;
 import org.eclipse.jgit.lib.Ref;
@@ -33,14 +39,6 @@ import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.revwalk.RevCommitList;
 import org.eclipse.jgit.revwalk.RevSort;
 
-import com.google.gerrit.reviewdb.client.Project.NameKey;
-import com.google.gerrit.server.git.GitRepositoryManager;
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
-import com.googlesource.gerrit.plugins.branchnetwork.data.json.Commit;
-import com.googlesource.gerrit.plugins.branchnetwork.data.json.Head;
-import com.googlesource.gerrit.plugins.branchnetwork.data.json.Parent;
-
 @Singleton
 public class JGitFacade {
   private final GitRepositoryManager repoManager;
@@ -51,8 +49,7 @@ public class JGitFacade {
   }
 
   public List<Commit> logData(String repository) throws IOException {
-    final Repository repo =
-        repoManager.openRepository(NameKey.parse(repository));
+    final Repository repo = repoManager.openRepository(NameKey.parse(repository));
     final PlotWalk walk = new PlotWalk(repo);
     try {
 
@@ -151,8 +148,7 @@ public class JGitFacade {
   }
 
   private List<Head> getHeadsForRepository(Repository repo) throws IOException {
-    Map<String, Ref> headRefs =
-        repo.getRefDatabase().getRefs(Constants.R_HEADS);
+    Map<String, Ref> headRefs = repo.getRefDatabase().getRefs(Constants.R_HEADS);
 
     List<Head> heads = new LinkedList<Head>();
     for (String headName : headRefs.keySet()) {
@@ -167,7 +163,7 @@ public class JGitFacade {
 
   public int getBranchesPlotLanesCount(String repoName) throws IOException {
     try (Repository repo = repoManager.openRepository(NameKey.parse(repoName));
-         PlotWalk walk = new PlotWalk(repo);) {
+        PlotWalk walk = new PlotWalk(repo); ) {
       ObjectId headId = repo.resolve(Constants.HEAD);
       if (headId == null) return 0;
 

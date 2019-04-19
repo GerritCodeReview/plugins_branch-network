@@ -16,89 +16,87 @@ package com.googlesource.gerrit.plugins.branchnetwork.data.json;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Commit  {
+public class Commit {
 
-    private String author;
-    private List<Parent> parents = new ArrayList<Parent>();
-    private int time;
-    private String date;
-    private String id;
-    private int space;
-    private String email;
-    private String message;
+  private String author;
+  private List<Parent> parents = new ArrayList<Parent>();
+  private int time;
+  private String date;
+  private String id;
+  private int space;
+  private String email;
+  private String message;
 
-    public String getAuthor() {
-        return author;
-    }
+  public String getAuthor() {
+    return author;
+  }
 
-    public List<Parent> getParents() {
-        return parents;
-    }
+  public List<Parent> getParents() {
+    return parents;
+  }
 
-    public int getTime() {
-        return time;
-    }
+  public int getTime() {
+    return time;
+  }
 
-    public String getDate() {
-        return date;
-    }
+  public String getDate() {
+    return date;
+  }
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public int getSpace() {
-        return space;
-    }
+  public int getSpace() {
+    return space;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public String getMessage() {
-        return message;
-    }
+  public String getMessage() {
+    return message;
+  }
 
-    public void addParent(Parent parent) {
-        this.parents.add(parent);
-    }
+  public void addParent(Parent parent) {
+    this.parents.add(parent);
+  }
 
+  public void setAuthor(String author) {
+    this.author = author;
+  }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+  public void setParents(List<Parent> parents) {
+    this.parents = parents;
+  }
 
-    public void setParents(List<Parent> parents) {
-        this.parents = parents;
-    }
+  public void setTime(int time) {
+    this.time = time;
+  }
 
-    public void setTime(int time) {
-        this.time = time;
-    }
+  public void setDate(String date) {
+    this.date = date;
+  }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public void setSpace(int space) {
+    this.space = space;
+  }
 
-    public void setSpace(int space) {
-        this.space = space;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public void setMessage(String message) {
+    this.message = message;
+  }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    @Override
-    public String toString() {
+  @Override
+  public String toString() {
     return id + " (" + date + ")";
-    }
-
+  }
 }

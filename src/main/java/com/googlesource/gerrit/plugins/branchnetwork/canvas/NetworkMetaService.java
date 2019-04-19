@@ -13,19 +13,17 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.branchnetwork.canvas;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.googlesource.gerrit.plugins.branchnetwork.data.GitCommitCache;
 import com.googlesource.gerrit.plugins.branchnetwork.data.json.Head;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Singleton
 public class NetworkMetaService extends JsonService {
@@ -40,9 +38,7 @@ public class NetworkMetaService extends JsonService {
     this.gitCommitCache = gitCommitCache;
   }
 
-  /**
-   * Beans intended to be used for JSON serialisation
-   */
+  /** Beans intended to be used for JSON serialisation */
   public static class MetaData {
     public List<Block> blocks = new LinkedList<Block>();
     public List<String> dates = new LinkedList<String>();
@@ -81,8 +77,8 @@ public class NetworkMetaService extends JsonService {
     returnRepositoryGraphMetaDataAsJson(req, resp, getProjectName(req));
   }
 
-  public void returnRepositoryGraphMetaDataAsJson(HttpServletRequest req,
-      HttpServletResponse resp, String project) throws IOException {
+  public void returnRepositoryGraphMetaDataAsJson(
+      HttpServletRequest req, HttpServletResponse resp, String project) throws IOException {
 
     MetaData metaData = new MetaData();
 
@@ -95,8 +91,7 @@ public class NetworkMetaService extends JsonService {
     int maxTime = dates.size();
 
     List<Head> heads = gitCommitCache.getHeads(project);
-    metaData.focus =
-        maxTime < COMMITS_FIRST_IN_FOCUS ? 0 : maxTime - COMMITS_FIRST_IN_FOCUS;
+    metaData.focus = maxTime < COMMITS_FIRST_IN_FOCUS ? 0 : maxTime - COMMITS_FIRST_IN_FOCUS;
 
     laneCount = gitCommitCache.getBranchesPlotLanesCount(project);
     metaData.blocks.add(new Block(project, laneCount, 0));
@@ -106,5 +101,4 @@ public class NetworkMetaService extends JsonService {
 
     returnJsonResponse(resp, metaData);
   }
-
 }

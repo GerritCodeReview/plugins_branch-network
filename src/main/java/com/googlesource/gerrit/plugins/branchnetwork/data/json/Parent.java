@@ -19,43 +19,41 @@ import com.google.gson.JsonPrimitive;
 
 public class Parent {
 
-    private String id;
+  private String id;
 
-    private int time;
+  private int time;
 
-    private int space;
+  private int space;
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public void setTime(int time) {
-        this.time = time;
-    }
+  public void setTime(int time) {
+    this.time = time;
+  }
 
-    public int getTime() {
-        return time;
-    }
+  public int getTime() {
+    return time;
+  }
 
-    public void setSpace(int space) {
-        this.space = space;
-    }
+  public void setSpace(int space) {
+    this.space = space;
+  }
 
-    public int getSpace() {
-        return space;
-    }
+  public int getSpace() {
+    return space;
+  }
 
-    public JsonElement toJson() {
-      JsonArray jsonOut = new JsonArray();
-      jsonOut.add(new JsonPrimitive(id));
-      jsonOut.add(new JsonPrimitive(time));
-      jsonOut.add(new JsonPrimitive(space));
-      return jsonOut;
-    }
-
-
+  public JsonElement toJson() {
+    JsonArray jsonOut = new JsonArray();
+    jsonOut.add(new JsonPrimitive(id));
+    jsonOut.add(new JsonPrimitive(time));
+    jsonOut.add(new JsonPrimitive(space));
+    return jsonOut;
+  }
 }

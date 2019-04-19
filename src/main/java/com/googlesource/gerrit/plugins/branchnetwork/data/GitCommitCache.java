@@ -13,22 +13,20 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.branchnetwork.data;
 
-import java.io.IOException;
-import java.text.ParseException;
-import java.util.List;
-
 import com.google.common.cache.CacheLoader;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.googlesource.gerrit.plugins.branchnetwork.data.json.Commit;
 import com.googlesource.gerrit.plugins.branchnetwork.data.json.Head;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.List;
 
 @Singleton
 public class GitCommitCache extends CacheLoader<String, List<Commit>> {
   public static final String GRAPH_DATA_CACHE = "NetworkGraphDataCache";
 
-  @Inject
-  private JGitFacade git;
+  @Inject private JGitFacade git;
 
   public List<Head> getHeads(String project) throws IOException {
     return git.getHeadsForRepository(project);
@@ -46,5 +44,4 @@ public class GitCommitCache extends CacheLoader<String, List<Commit>> {
   public int getBranchesPlotLanesCount(String project) throws IOException {
     return git.getBranchesPlotLanesCount(project);
   }
-
 }

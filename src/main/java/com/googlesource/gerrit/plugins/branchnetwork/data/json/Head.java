@@ -13,7 +13,7 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.branchnetwork.data.json;
 
-public class Head  {
+public class Head {
 
   private String name;
   private String id;

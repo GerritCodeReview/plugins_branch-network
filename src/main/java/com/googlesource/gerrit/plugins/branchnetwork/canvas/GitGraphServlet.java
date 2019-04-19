@@ -13,19 +13,6 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.branchnetwork.canvas;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.eclipse.jgit.errors.RepositoryNotFoundException;
-import org.eclipse.jgit.lib.Repository;
-
 import com.google.gerrit.common.data.GitwebType;
 import com.google.gerrit.extensions.annotations.PluginCanonicalWebUrl;
 import com.google.gerrit.extensions.restapi.AuthException;
@@ -39,6 +26,16 @@ import com.google.gerrit.server.permissions.ProjectPermission;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.Singleton;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.eclipse.jgit.errors.RepositoryNotFoundException;
+import org.eclipse.jgit.lib.Repository;
 
 @Singleton
 public class GitGraphServlet extends HttpServlet {
@@ -54,15 +51,15 @@ public class GitGraphServlet extends HttpServlet {
   private final PermissionBackend permissionBackend;
 
   @Inject
-  public GitGraphServlet(@PluginCanonicalWebUrl String url,
+  public GitGraphServlet(
+      @PluginCanonicalWebUrl String url,
       GitwebConfig gitWebConfig,
       final GitRepositoryManager repoManager,
       Provider<CurrentUser> user,
       PermissionBackend permissionBackend)
       throws MalformedURLException {
     this.canonicalPath = new URL(url).getPath();
-    this.pluginCanonicalWebUrl =
-        url.substring(0, url.length() - (canonicalPath.length() - 1));
+    this.pluginCanonicalWebUrl = url.substring(0, url.length() - (canonicalPath.length() - 1));
     this.repoManager = repoManager;
     this.gitWebConfig = gitWebConfig;
     this.user = user;
@@ -111,11 +108,9 @@ public class GitGraphServlet extends HttpServlet {
         }
       }
 
-      String networkMetaUrl =
-          String.format("%1$snetwork_meta/%2$s/", canonicalPath, repoName);
+      String networkMetaUrl = String.format("%1$snetwork_meta/%2$s/", canonicalPath, repoName);
       String networkDataChunkUrl =
-          String.format("%1$snetwork_data_chunk/%2$s/?nethash=", canonicalPath,
-              repoName);
+          String.format("%1$snetwork_data_chunk/%2$s/?nethash=", canonicalPath, repoName);
 
       GitwebType type = gitWebConfig.getGitwebType();
       if (type == null) {
@@ -127,20 +122,25 @@ public class GitGraphServlet extends HttpServlet {
                     .replaceAll("\\$\\{project\\}", repoName)
                     .replaceAll("\\$\\{commit\\}", "{2}");
         String projectPattern =
-            gitWebConfig.getUrl()
-                + type.getProject()
-                    .replaceAll("\\$\\{project\\}", repoName);
+            gitWebConfig.getUrl() + type.getProject().replaceAll("\\$\\{project\\}", repoName);
 
         commitUrlPattern =
-            (commitUrlPattern.startsWith("/") ? commitUrlPattern : pluginCanonicalWebUrl
-                + commitUrlPattern);
+            (commitUrlPattern.startsWith("/")
+                ? commitUrlPattern
+                : pluginCanonicalWebUrl + commitUrlPattern);
         projectPattern =
-            (projectPattern.startsWith("/") ? projectPattern : pluginCanonicalWebUrl
-                + projectPattern);
+            (projectPattern.startsWith("/")
+                ? projectPattern
+                : pluginCanonicalWebUrl + projectPattern);
 
         String header =
-            "<html>\n" + "<head>\n" + "<style type=\"text/css\">\n"
-                + "div#progress\n" + "{\n" + "position:absolute;\n" + "left:"
+            "<html>\n"
+                + "<head>\n"
+                + "<style type=\"text/css\">\n"
+                + "div#progress\n"
+                + "{\n"
+                + "position:absolute;\n"
+                + "left:"
                 + (width - PROGRESS_BAR_WIDTH) / 2
                 + "px;\n"
                 + "top:"
@@ -165,22 +165,41 @@ public class GitGraphServlet extends HttpServlet {
                 + "</div>"
                 + "<div id=\"graph\">";
         String javaScript =
-            "<script type=\"text/javascript\" src=\"" + canonicalPath
+            "<script type=\"text/javascript\" src=\""
+                + canonicalPath
                 + "static/jquery-1.4.2.min.js\"></script>\n"
-                + "<script type=\"text/javascript\" src=\"" + canonicalPath
+                + "<script type=\"text/javascript\" src=\""
+                + canonicalPath
                 + "static/network.js\"></script>\n"
                 + "<script type=\"text/javascript\">"
                 + "$(document).ready( function() {\n"
-                + "new NetworkCanvas('network-canvas', " + width + ", " + height
-                + " , null, null, null,\n" + "'" + commitUrlPattern + "',\n"
-                + "'" + projectPattern + "',\n" + "'" + networkMetaUrl + "',\n"
-                + "'" + networkDataChunkUrl + "');\n" + "});\n" + "</script>\n";
+                + "new NetworkCanvas('network-canvas', "
+                + width
+                + ", "
+                + height
+                + " , null, null, null,\n"
+                + "'"
+                + commitUrlPattern
+                + "',\n"
+                + "'"
+                + projectPattern
+                + "',\n"
+                + "'"
+                + networkMetaUrl
+                + "',\n"
+                + "'"
+                + networkDataChunkUrl
+                + "');\n"
+                + "});\n"
+                + "</script>\n";
         String canvas =
-            "<canvas id=\"network-canvas\" width=\"" + width + "\" height=\""
-                + height + "\" style=\"cursor: default; \"></canvas>";
+            "<canvas id=\"network-canvas\" width=\""
+                + width
+                + "\" height=\""
+                + height
+                + "\" style=\"cursor: default; \"></canvas>";
         String footer = "</div>" + "</body>\n" + "</html>\n";
-        out.println(naked ? (javaScript + canvas)
-            : (header + javaScript + canvas + footer));
+        out.println(naked ? (javaScript + canvas) : (header + javaScript + canvas + footer));
       }
     } finally {
       out.close();

@@ -13,14 +13,6 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.branchnetwork.canvas;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.google.common.cache.LoadingCache;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
@@ -28,6 +20,12 @@ import com.google.inject.name.Named;
 import com.googlesource.gerrit.plugins.branchnetwork.data.GitCommitCache;
 import com.googlesource.gerrit.plugins.branchnetwork.data.json.Commit;
 import com.googlesource.gerrit.plugins.branchnetwork.data.json.Data;
+import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Singleton
 public class NetworkDataChunkService extends JsonService {
@@ -39,7 +37,8 @@ public class NetworkDataChunkService extends JsonService {
 
   @Inject
   public NetworkDataChunkService(
-      @Named(GitCommitCache.GRAPH_DATA_CACHE) final LoadingCache<String, List<Commit>> networkGraphDataCache) {
+      @Named(GitCommitCache.GRAPH_DATA_CACHE)
+          final LoadingCache<String, List<Commit>> networkGraphDataCache) {
     this.networkGraphDataCache = networkGraphDataCache;
   }
 
@@ -53,8 +52,8 @@ public class NetworkDataChunkService extends JsonService {
     }
   }
 
-  public void printJson(HttpServletRequest req, HttpServletResponse resp,
-      String project) throws IOException, ExecutionException {
+  public void printJson(HttpServletRequest req, HttpServletResponse resp, String project)
+      throws IOException, ExecutionException {
 
     String domainRepoName = req.getParameter("nethash");
 
@@ -68,11 +67,9 @@ public class NetworkDataChunkService extends JsonService {
     String end = req.getParameter("end");
     if (end != null) endInt = Integer.parseInt(end);
 
-    if ((endInt - startInt) > MAX_COMMIT_CHUNK_LEN)
-      startInt = endInt - MAX_COMMIT_CHUNK_LEN;
+    if ((endInt - startInt) > MAX_COMMIT_CHUNK_LEN) startInt = endInt - MAX_COMMIT_CHUNK_LEN;
 
     Data data = new Data(commits.subList(startInt, endInt + 1));
     returnJsonResponse(resp, data);
   }
-
 }

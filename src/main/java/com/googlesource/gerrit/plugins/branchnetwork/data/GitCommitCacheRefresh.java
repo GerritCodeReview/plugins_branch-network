@@ -13,23 +13,22 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.branchnetwork.data;
 
-import java.util.List;
-
 import com.google.common.cache.LoadingCache;
 import com.google.gerrit.extensions.events.GitReferenceUpdatedListener;
 import com.google.gerrit.extensions.events.NewProjectCreatedListener;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import com.googlesource.gerrit.plugins.branchnetwork.data.json.Commit;
+import java.util.List;
 
-public class GitCommitCacheRefresh implements GitReferenceUpdatedListener,
-    NewProjectCreatedListener {
+public class GitCommitCacheRefresh
+    implements GitReferenceUpdatedListener, NewProjectCreatedListener {
   private LoadingCache<String, List<Commit>> networkGraphDataCache;
 
   @Inject
   public GitCommitCacheRefresh(
-      @Named(GitCommitCache.GRAPH_DATA_CACHE) final LoadingCache<String,
-      List<Commit>> networkGraphDataCache) {
+      @Named(GitCommitCache.GRAPH_DATA_CACHE)
+          final LoadingCache<String, List<Commit>> networkGraphDataCache) {
     this.networkGraphDataCache = networkGraphDataCache;
   }
 

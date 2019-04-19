@@ -13,15 +13,6 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.branchnetwork.canvas;
 
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Type;
-
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -29,6 +20,13 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.stream.JsonWriter;
 import com.googlesource.gerrit.plugins.branchnetwork.data.json.Parent;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class JsonService extends HttpServlet {
   private static final long serialVersionUID = -909762366548464514L;
@@ -36,20 +34,21 @@ public class JsonService extends HttpServlet {
 
   private static Gson getGson() {
     GsonBuilder gsonBuilder = new GsonBuilder();
-    gsonBuilder.registerTypeAdapter(Parent.class, new JsonSerializer<Parent>() {
-      @Override
-      public JsonElement serialize(Parent src, Type typeOfSrc,
-          JsonSerializationContext context) {
-        return src.toJson();
-      }
-    });
+    gsonBuilder.registerTypeAdapter(
+        Parent.class,
+        new JsonSerializer<Parent>() {
+          @Override
+          public JsonElement serialize(
+              Parent src, Type typeOfSrc, JsonSerializationContext context) {
+            return src.toJson();
+          }
+        });
     return gsonBuilder.create();
   }
 
   protected void returnJsonResponse(HttpServletResponse resp, Object data)
       throws UnsupportedEncodingException, IOException {
-    JsonWriter writer =
-        new JsonWriter(new OutputStreamWriter(resp.getOutputStream(), "UTF-8"));
+    JsonWriter writer = new JsonWriter(new OutputStreamWriter(resp.getOutputStream(), "UTF-8"));
     try {
       gson.toJson(data, data.getClass(), writer);
     } finally {
@@ -62,8 +61,7 @@ public class JsonService extends HttpServlet {
     String reqURI = req.getRequestURI();
     int servletPathPos = reqURI.indexOf(servletPath);
 
-    String projectName =
-        reqURI.substring(servletPathPos + servletPath.length());
+    String projectName = reqURI.substring(servletPathPos + servletPath.length());
     if (projectName.startsWith("/")) {
       projectName = projectName.substring(1);
     }

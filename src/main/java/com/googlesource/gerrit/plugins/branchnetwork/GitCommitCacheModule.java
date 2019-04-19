@@ -13,8 +13,6 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.branchnetwork;
 
-import java.util.List;
-
 import com.google.gerrit.extensions.events.GitReferenceUpdatedListener;
 import com.google.gerrit.extensions.events.NewProjectCreatedListener;
 import com.google.gerrit.extensions.registration.DynamicSet;
@@ -23,17 +21,16 @@ import com.google.inject.TypeLiteral;
 import com.googlesource.gerrit.plugins.branchnetwork.data.GitCommitCache;
 import com.googlesource.gerrit.plugins.branchnetwork.data.GitCommitCacheRefresh;
 import com.googlesource.gerrit.plugins.branchnetwork.data.json.Commit;
+import java.util.List;
 
 public class GitCommitCacheModule extends CacheModule {
 
   @Override
   protected void configure() {
-    cache(GitCommitCache.GRAPH_DATA_CACHE, String.class,
-        new TypeLiteral<List<Commit>>() {}).loader(GitCommitCache.class);
+    cache(GitCommitCache.GRAPH_DATA_CACHE, String.class, new TypeLiteral<List<Commit>>() {})
+        .loader(GitCommitCache.class);
 
-    DynamicSet.bind(binder(), GitReferenceUpdatedListener.class).to(
-        GitCommitCacheRefresh.class);
-    DynamicSet.bind(binder(), NewProjectCreatedListener.class).to(
-        GitCommitCacheRefresh.class);
+    DynamicSet.bind(binder(), GitReferenceUpdatedListener.class).to(GitCommitCacheRefresh.class);
+    DynamicSet.bind(binder(), NewProjectCreatedListener.class).to(GitCommitCacheRefresh.class);
   }
 }

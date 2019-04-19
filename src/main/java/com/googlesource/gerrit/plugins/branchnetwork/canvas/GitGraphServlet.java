@@ -89,7 +89,7 @@ public class GitGraphServlet extends HttpServlet {
 
       final Project.NameKey nameKey = new Project.NameKey(repoName);
       try {
-        permissionBackend.user(user).project(nameKey).check(ProjectPermission.ACCESS);
+        permissionBackend.user(user.get()).project(nameKey).check(ProjectPermission.ACCESS);
       } catch (AuthException | PermissionBackendException e) {
         resp.sendError(HttpServletResponse.SC_NOT_FOUND);
         return;

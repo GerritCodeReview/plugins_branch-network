@@ -14,9 +14,9 @@
 package com.googlesource.gerrit.plugins.branchnetwork.canvas;
 
 import com.google.gerrit.common.data.GitwebType;
+import com.google.gerrit.entities.Project;
 import com.google.gerrit.extensions.annotations.PluginCanonicalWebUrl;
 import com.google.gerrit.extensions.restapi.AuthException;
-import com.google.gerrit.reviewdb.client.Project;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.GitwebConfig;
 import com.google.gerrit.server.git.GitRepositoryManager;
@@ -87,9 +87,9 @@ public class GitGraphServlet extends HttpServlet {
         repoName = repoName.substring(0, repoName.length() - 4);
       }
 
-      final Project.NameKey nameKey = new Project.NameKey(repoName);
+      final Project.NameKey nameKey = Project.nameKey(repoName);
       try {
-        permissionBackend.user(user).project(nameKey).check(ProjectPermission.ACCESS);
+        permissionBackend.user(user.get()).project(nameKey).check(ProjectPermission.ACCESS);
       } catch (AuthException | PermissionBackendException e) {
         resp.sendError(HttpServletResponse.SC_NOT_FOUND);
         return;

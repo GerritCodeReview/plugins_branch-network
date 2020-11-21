@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b4758da_e4cd310b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1121180
+      },
+      "writtenOn": "2020-11-21T10:27:25Z",
+      "side": 1,
+      "message": "wifi protection ",
+      "revId": "9320558ec772d319fe5c470146c39762eea3ddcd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

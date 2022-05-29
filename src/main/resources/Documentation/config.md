@@ -19,7 +19,7 @@ GitWeb section (assuming the plugin was copied as branch-network.jar):
   file = ?p=${project}
 ```
 
-Note that the `project, ``branch`, `revision` and `filehistory` settings
+Note that the `project`, `branch`, `revision` and `filehistory` settings
 must all be specified, otherwise Gerrit will disable the configuration.
 
 Usage in other GWT or JavaScript UI
